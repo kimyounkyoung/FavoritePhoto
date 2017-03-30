@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FavoritePhoto</string>
+    <string name="msg_title">선택을 시작하시겠습니까?</string>
+    <string name="check_lbl">시작함</string>
+    <string name="msg_quest">좋아하는 러브라이브 캐릭터는?</string>
+    <string name="character_rin">호시조라 린</string>
+    <string name="character_nico">야자와 니코</string>
+    <string name="character_umi">소노다 우미</string>
+    <string name="character_kotori">미나미 코토리</string>
+    <string name="bur_lbl">선택 완료</string>
+</resources>
