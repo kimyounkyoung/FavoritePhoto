@@ -10,8 +10,9 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener{
+public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener{
     CheckBox checkSelect;
     RadioGroup rg;
     RadioButton radioKotori, radioRin, radioUmi, radioNico;
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         butOk=(Button) findViewById(R.id.but_ok);
         imgvPhoto=(ImageView) findViewById(R.id.imgv_photo);
         checkSelect.setOnCheckedChangeListener(this);
-    }
+        butOk.setOnClickListener(this);
+    }   //end of onCreate
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -47,6 +49,26 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             rg.setVisibility(View.INVISIBLE);
             butOk.setVisibility(View.INVISIBLE);
             imgvPhoto.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (rg.getCheckedRadioButtonId()){
+            case R.id.radio_kotori :
+                imgvPhoto.setImageResource(R.drawable.lovelivekotori);
+                break;
+            case R.id.radio_rin :
+                imgvPhoto.setImageResource(R.drawable.loveliverin);
+                break;
+            case R.id.radio_niko :
+                imgvPhoto.setImageResource(R.drawable.loveliveniko);
+                break;
+            case R.id.radio_umi :
+                imgvPhoto.setImageResource(R.drawable.loveliveumi);
+                break;
+            default:
+                Toast.makeText(this, "라디오 버튼이 하나도 선택이 안 되었네요 :(", Toast.LENGTH_SHORT).show();
         }
     }
 }
